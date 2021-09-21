@@ -30,7 +30,7 @@ interface WeatherDetail {
 }
 
 export interface CityWeatherReport {
-  id: string;
+  id?: string;
   location: Location;
   current: WeatherDetail;
 }

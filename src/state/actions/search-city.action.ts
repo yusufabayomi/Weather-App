@@ -14,4 +14,8 @@ interface SearchCitySuccessAction {
   payload: Location[];
 }
 
-export type SearchCityAction = SearchCityLoadingAction | SearchCityFailAction | SearchCitySuccessAction;
+interface ResetSearchCityAction {
+  type: ActionType.RESET_SEARCH_CITY;
+}
+
+export type SearchCityAction = SearchCityLoadingAction | SearchCityFailAction | SearchCitySuccessAction | ResetSearchCityAction;

@@ -1,24 +1,28 @@
 import { Note } from '../../helpers/interfaces';
 import { ActionType } from '../action-types';
 
-interface FetchNoteAction {
-  type: ActionType.FETCH_NOTES;
-  payload: Note[];
-}
-
 interface EditNoteAction {
   type: ActionType.EDIT_NOTE;
-  payload: Note;
+  payload: {
+    note: Note;
+    city: string;
+  };
 }
 
 interface AddNoteAction {
   type: ActionType.ADD_NOTE;
-  payload: Note;
+  payload: {
+    note: Note;
+    city: string;
+  };
 }
 
 interface DeleteNoteAction {
   type: ActionType.DELETE_NOTE;
-  payload: string;
+  payload: {
+    id: string;
+    city: string;
+  };
 }
 
-export type NoteAction = FetchNoteAction | EditNoteAction | AddNoteAction | DeleteNoteAction;
+export type NoteAction = EditNoteAction | AddNoteAction | DeleteNoteAction;
