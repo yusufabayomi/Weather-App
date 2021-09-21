@@ -39,3 +39,31 @@ export interface Note {
   id: string;
   content: string;
 }
+
+export interface CityNote {
+  cityName: string;
+  cityNotes: Note[];
+}
+
+export interface CitiesState {
+  top: CityWeatherReport[] | null;
+  favorite: CityWeatherReport[];
+  loading: boolean;
+  error: boolean;
+}
+
+export interface CityState {
+  city: CityWeatherReport | null;
+  loading: boolean;
+  error: boolean;
+}
+
+export interface SearchCitiesState {
+  cities: Location[];
+  loading: boolean;
+  error: boolean;
+}
+
+export interface NoteState {
+  notes: CityNote[];
+}
