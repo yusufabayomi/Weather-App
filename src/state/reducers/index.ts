@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import citiesReducer from './cities.reducer';
 import cityReducer from './city.reducer';
 import noteReducer from './notes.reducer';
-import searchCitiesReducer from './searched-cities.reducer';
+import searchCitiesReducer from './search-cities.reducer';
 
 const reducers = combineReducers({
   cities: citiesReducer,

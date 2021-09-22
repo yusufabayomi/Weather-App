@@ -7,7 +7,7 @@ export interface Location {
   timezone_id: string;
   utc_offset: string;
   localtime?: string;
-  localtime_epoch?: string;
+  localtime_epoch?: number;
 }
 
 interface WeatherDetail {
@@ -26,7 +26,7 @@ interface WeatherDetail {
   feelslike: number;
   uv_index: number;
   visibility: number;
-  is_day: string;
+  is_day?: string;
 }
 
 export interface CityWeatherReport {
