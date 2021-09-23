@@ -1,0 +1,17 @@
+.notification {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.info {
+  background-color: rgba(228, 185, 47, 0.9);
+}
+
+.error {
+  background-color: rgba(226, 59, 74, 0.9);
+}

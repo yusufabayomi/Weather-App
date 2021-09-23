@@ -20,6 +20,9 @@ export const fetchTopCities = () => async (dispatch: Dispatch<CitiesAction>) => 
     handleFetchTopCitiesSuccess(dispatch, topCities);
   } catch (e) {
     handleFetchTopCitiesFail(dispatch);
+    setTimeout(() => {
+      handleDismissTopCitiesError(dispatch);
+    }, 4000);
   }
 };
 
@@ -80,6 +83,12 @@ const handleFetchTopCitiesFail = (dispatch: Dispatch<CitiesAction>) => {
 
 const handleFetchTopCitiesSuccess = (dispatch: Dispatch<CitiesAction>, response: CityWeatherReport[]) => {
   dispatch({ type: ActionType.FETCH_TOP_CITIES_WEATHER_SUCCESS, payload: response });
+};
+
+const handleDismissTopCitiesError = (dispatch: Dispatch<CitiesAction>) => {
+  dispatch({
+    type: ActionType.DISMISS_FETCH_TOP_CITIES_WEATHER_ERROR,
+  });
 };
 
 const handleFetchCity = (dispatch: Dispatch<CityAction>) => {

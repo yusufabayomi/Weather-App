@@ -9,6 +9,10 @@ export interface FetchTopCitiesFailAction {
   type: ActionType.FETCH_TOP_CITIES_WEATHER_FAIL;
 }
 
+export interface DismissFetchTopCitiesErrorAction {
+  type: ActionType.DISMISS_FETCH_TOP_CITIES_WEATHER_ERROR;
+}
+
 export interface FetchTopCitiesSuccessAction {
   type: ActionType.FETCH_TOP_CITIES_WEATHER_SUCCESS;
   payload: CityWeatherReport[];
@@ -29,4 +33,4 @@ export interface RemoveFavoriteCityAction {
   payload: string;
 }
 
-export type CitiesAction = FetchTopCitiesLoadingAction | FetchTopCitiesFailAction | FetchTopCitiesSuccessAction | RemoveTopCitiesAction | AddFavoriteCityAction | RemoveFavoriteCityAction;
+export type CitiesAction = FetchTopCitiesLoadingAction | FetchTopCitiesFailAction | FetchTopCitiesSuccessAction | RemoveTopCitiesAction | AddFavoriteCityAction | RemoveFavoriteCityAction | DismissFetchTopCitiesErrorAction;

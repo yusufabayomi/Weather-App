@@ -1,0 +1,32 @@
+.city-card,
+.city-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city-card h5 {
+  font-weight: 400;
+}
+
+.city-card p {
+  margin-top: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.city-country {
+  font-size: 10px;
+}
+
+.weather-image {
+  width: 55px;
+  height: 55px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.weather-image img {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+}

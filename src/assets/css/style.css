@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+.root {
+  height: 100%;
+}
+
+body,
+h1 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.h100 {
+  min-height: 100%;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-yellow {
+  color: rgba(228, 185, 47, 1);
+}
+
+.container {
+  max-width: 1180px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col5 {
+  width: 19%;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.card {
+  background-color: rgb(29, 63, 94, 0.5);
+  padding: 15px;
+  border: 1px solid rgb(29, 63, 94, 1);
+}

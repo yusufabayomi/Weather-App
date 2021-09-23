@@ -22,6 +22,8 @@ const citiesReducer = (state = initialState, action: CitiesAction): CitiesState 
       return { ...state, favorite: [action.payload, ...state.favorite] };
     case ActionType.REMOVE_FAVORITE_CITY:
       return { ...state, favorite: state.favorite.filter((city) => city.id !== action.payload) };
+    case ActionType.DISMISS_FETCH_TOP_CITIES_WEATHER_ERROR:
+      return { ...state, error: false };
     default:
       return state;
   }

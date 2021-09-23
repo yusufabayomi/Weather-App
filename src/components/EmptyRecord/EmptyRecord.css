@@ -1,0 +1,12 @@
+.empty {
+  text-align: center;
+  padding: 100px;
+}
+
+.empty img {
+  width: 200px;
+}
+
+.empty h3 {
+  margin-top: 20px;
+}
