@@ -2,7 +2,6 @@ import { AxiosResponse } from 'axios';
 import { Dispatch } from 'redux';
 import { fetchCityWeatherApi, fetchTopCitiesWeatherApi } from '../../api';
 import { CityWeatherReport, Location } from '../../helpers/interfaces';
-import { generateId } from '../../helpers/utils';
 import { ActionType } from '../action-types';
 import { CitiesAction, CityAction, SearchCityAction } from '../actions';
 
@@ -12,7 +11,7 @@ export const fetchTopCities = () => async (dispatch: Dispatch<CitiesAction>) => 
     const response: AxiosResponse<CityWeatherReport[]> = await fetchTopCitiesWeatherApi();
     const topCities: CityWeatherReport[] = response.data.map((city) => {
       return {
-        id: generateId(),
+        id: `${city.location.name},${city.location.country}`,
         location: city.location,
         current: city.current,
       };

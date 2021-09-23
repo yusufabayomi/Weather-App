@@ -9,6 +9,7 @@ const store = createStore(reducers, persistedState, applyMiddleware(thunk));
 
 store.subscribe(() => {
   console.log('store has changed');
+  //localStorage.clear();
   localStorage.setItem(STORE_STATE, JSON.stringify(store.getState()));
 });
 

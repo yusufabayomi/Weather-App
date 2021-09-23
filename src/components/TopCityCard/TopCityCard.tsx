@@ -6,7 +6,7 @@ import { CityWeatherReport } from '../../helpers/interfaces';
 import CityCard from '../CityCard/CityCard';
 import './TopCityCard.css';
 import { RootState } from '../../state/reducers';
-import { addFavoriteCity, removeFavoriteCity } from '../../state/action-creators';
+import { addFavoriteCity, removeFavoriteCity, removeTopCity } from '../../state/action-creators';
 
 type Props = {
   city: CityWeatherReport;
@@ -17,16 +17,23 @@ const TopCityCard: FC<Props> = ({ city }) => {
 
   const dispatch = useDispatch();
 
-  const onFavoriteClickHandler = useCallback(() => {
+  const onFavoriteHandler = useCallback(() => {
     isFavoriteCity ? dispatch(removeFavoriteCity(city.id!)) : dispatch(addFavoriteCity(city));
   }, [city, isFavoriteCity, dispatch]);
+
+  const onDeleteHandler = useCallback(() => {
+    dispatch(removeTopCity(city.id!));
+    if (isFavoriteCity) {
+      dispatch(removeFavoriteCity(city.id!));
+    }
+  }, [city, dispatch, isFavoriteCity]);
 
   return (
     <div className='col5'>
       <CityCard city={city} />
       <div className='city-card-actions'>
-        <FontAwesomeIcon icon={faStar} onClick={onFavoriteClickHandler} className={`${isFavoriteCity ? 'text-yellow' : 'text-white'}`} />
-        <FontAwesomeIcon icon={faTrash} className='text-white' />
+        <FontAwesomeIcon icon={faStar} onClick={onFavoriteHandler} className={`${isFavoriteCity ? 'text-yellow' : 'text-white'}`} />
+        <FontAwesomeIcon icon={faTrash} onClick={onDeleteHandler} className='text-white' />
       </div>
     </div>
   );
