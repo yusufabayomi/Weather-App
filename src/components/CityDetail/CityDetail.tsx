@@ -8,11 +8,11 @@ import CityDetailItem from '../CityDetailItem/CityDetailItem';
 const CityDetail: FC = () => {
   const { city } = useSelector((state: RootState) => state.city);
   return (
-    <>
-      {city && (
-        <div className='col2'>
-          <CardHeader heading='Weather Report' />
-          <div className='card'>
+    <div className='col2'>
+      <CardHeader heading='Weather Report' />
+      <div className='card'>
+        {city && (
+          <>
             <div className='flex align-center mb-20'>
               <div>
                 <h4 className='text-white'>{city.location.name},</h4>
@@ -43,10 +43,10 @@ const CityDetail: FC = () => {
               <CityDetailItem title='Pressure' value={`${city.current.pressure} mb`} />
               <CityDetailItem title='Humidity' value={`${city.current.humidity}`} />
             </div>
-          </div>
-        </div>
-      )}
-    </>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 
