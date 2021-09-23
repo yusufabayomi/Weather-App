@@ -1,3 +1,7 @@
+.city-card {
+  cursor: pointer;
+}
+
 .city-card,
 .city-card-actions {
   display: flex;

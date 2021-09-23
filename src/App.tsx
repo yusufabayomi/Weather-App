@@ -1,19 +1,20 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import CityDetail from './pages/CityDetailPage';
+import { Router, Route, Switch } from 'react-router-dom';
+import CityDetail from './pages/CityPage';
 import Home from './pages/HomePage';
+import history from './helpers/history';
 
 function App() {
   return (
     <div className='container-full app h100'>
       <div className='container'>
-        <BrowserRouter>
+        <Router history={history}>
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/city' exact component={CityDetail} />
+            <Route path='/city/:id' exact component={CityDetail} />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     </div>
   );

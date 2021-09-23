@@ -1,0 +1,9 @@
+.city-detail-item {
+  border-top: 1px solid rgb(29, 63, 94, 1);
+  padding: 5px 0;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 12px;
+}

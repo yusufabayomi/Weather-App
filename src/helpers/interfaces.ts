@@ -6,7 +6,7 @@ export interface Location {
   lon: string;
   timezone_id: string;
   utc_offset: string;
-  localtime?: string;
+  localtime: string;
   localtime_epoch?: number;
 }
 
