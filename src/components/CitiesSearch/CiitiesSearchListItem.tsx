@@ -11,6 +11,7 @@ type Props = {
 const CitiesSearchListItem: FC<Props> = ({ city, hideSuggestion }) => {
   const onClickHandler = useCallback(() => {
     history.push(`/city/${city.name},${city.country}`);
+    // dismiss the suggestion box when user clicks on a city
     hideSuggestion();
   }, [city, hideSuggestion]);
 

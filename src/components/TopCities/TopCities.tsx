@@ -21,7 +21,7 @@ const TopCities: FC = () => {
       {error && <Notification text='Error fetching weather report' type='error' />}
       {top && (
         <div className='pt30'>
-          <h1 className='text-white mb-10'>Top Cities</h1>
+          <h2 className='text-white mb-10'>Top Cities</h2>
           {!top.length && (
             <div className='card'>
               <EmptyRecord />

@@ -18,9 +18,9 @@ const CityDetail: FC = () => {
                 <h4 className='text-white'>{city.location.name},</h4>
                 <h4 className='text-white'>{city.location.country}</h4>
               </div>
-              <div className='text-center'>
-                <h4 className='text-white'>{city.current.temperature}°C</h4>
-                <h5 className='text-white'>{city.current.weather_descriptions[0]}</h5>
+              <div className='text-center temp-report'>
+                <h2 className='text-white'>{city.current.temperature}°C</h2>
+                <h5 className='text-white title'>{city.current.weather_descriptions[0]}</h5>
               </div>
               <div>
                 <div className='weather-image'>

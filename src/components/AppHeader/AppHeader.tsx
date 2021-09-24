@@ -13,7 +13,7 @@ const AppHeader: FC = () => {
   return (
     <div className='row app-header'>
       <div className='col3' onClick={onClickHandler}>
-        <h2 className='text-white'>
+        <h2 className='text-white logo'>
           <FontAwesomeIcon icon={faSun} className='text-yellow' /> Weather App
         </h2>
       </div>

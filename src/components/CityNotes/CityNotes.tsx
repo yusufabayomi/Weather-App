@@ -36,7 +36,7 @@ const CityNotes: FC = () => {
         <NoteForm formActionType={formActionType} textValue={textValue} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />
 
         <div className='mt-20 scroll-div' style={{ height: '320px' }}>
-          {cityNote && cityNote.cityNotes.length && cityNote.cityNotes.map((note) => <NoteItem key={note.id} note={note} cityName={cityNote.cityName} editNoteHandler={editNoteHandler} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />)}
+          {cityNote && cityNote.cityNotes.length ? cityNote.cityNotes.map((note) => <NoteItem key={note.id} note={note} cityName={cityNote.cityName} editNoteHandler={editNoteHandler} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />) : null}
         </div>
       </div>
     </div>

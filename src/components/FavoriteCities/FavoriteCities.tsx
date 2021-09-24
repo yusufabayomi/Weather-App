@@ -11,7 +11,7 @@ const FavoriteCities: FC = () => {
     <>
       {favorite.length ? (
         <div className='pt30'>
-          <h1 className='text-white mb-10'>Favorite Cities</h1>
+          <h2 className='text-white mb-10'>Favorite Cities</h2>
           <div className='row'>
             {sortCitiesAscending(favorite).map((city) => (
               <div className='col5 mb-10' key={city.id}>
