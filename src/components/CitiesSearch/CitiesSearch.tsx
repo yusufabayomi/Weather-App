@@ -1,7 +1,7 @@
 import { FC, useCallback, useState, FormEvent, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useDebounceSearch from '../../hooks/useDebounceSearch';
-import useExternalClick from '../../hooks/useExternalClick';
+import useExternalClick from '../../hooks/useClickOutside';
 import { resetSearchCity, searchCity } from '../../state/action-creators';
 import { RootState } from '../../state/reducers';
 import CitiesSearchListItem from './CiitiesSearchListItem';

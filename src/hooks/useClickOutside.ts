@@ -1,10 +1,10 @@
 import { useEffect, RefObject } from 'react';
 
-const useExternalClick = (ref: RefObject<HTMLDivElement>, handleClick: () => void) => {
+const useClickOutside = (ref: RefObject<HTMLDivElement>, handleClick: () => void) => {
   useEffect(() => {
-    const listener = ({ target }: any) => {
+    const listener = (event: MouseEvent | TouchEvent) => {
       if (null !== ref.current) {
-        if (ref.current.contains(target)) {
+        if (ref.current.contains(event.target as Node)) {
           return;
         }
         handleClick();
@@ -18,4 +18,4 @@ const useExternalClick = (ref: RefObject<HTMLDivElement>, handleClick: () => voi
   }, [ref, handleClick]);
 };
 
-export default useExternalClick;
+export default useClickOutside;
