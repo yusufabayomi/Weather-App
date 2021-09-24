@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { RootState } from '../../state/reducers';
 import CardHeader from '../CardHeader/CardHeader';
-import EmptyRecord from '../EmptyRecord/EmptyRecord';
 import NoteForm from '../NoteForm/NoteForm';
 import NoteItem from '../NoteItem/NoteItem';
 
@@ -36,7 +35,9 @@ const CityNotes: FC = () => {
       <div className='card'>
         <NoteForm formActionType={formActionType} textValue={textValue} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />
 
-        <div className='mt-20 scroll-div'>{cityNote && cityNote.cityNotes.length && cityNote.cityNotes.map((note) => <NoteItem key={note.id} note={note} cityName={cityNote.cityName} editNoteHandler={editNoteHandler} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />)}</div>
+        <div className='mt-20 scroll-div' style={{ height: '320px' }}>
+          {cityNote && cityNote.cityNotes.length && cityNote.cityNotes.map((note) => <NoteItem key={note.id} note={note} cityName={cityNote.cityName} editNoteHandler={editNoteHandler} editedNoteId={editedNoteId} resetNoteForm={resetNoteForm} />)}
+        </div>
       </div>
     </div>
   );

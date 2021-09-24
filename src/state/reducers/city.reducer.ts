@@ -15,6 +15,8 @@ const cityReducer = (state = initialState, action: CityAction): CityState => {
       return { ...state, loading: false, city: action.payload };
     case ActionType.FETCH_CITY_WEATHER_FAIL:
       return { ...state, loading: false, error: true };
+    case ActionType.DISMISS_FETCH_CITY_WEATHER_ERROR:
+      return { ...state, error: false };
     default:
       return state;
   }

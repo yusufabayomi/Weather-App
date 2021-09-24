@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { Dispatch } from 'redux';
-import { fetchCityWeatherApi, fetchTopCitiesWeatherApi } from '../../api';
+import { fetchCityWeatherApi, fetchTopCitiesWeatherApi, searchCityApi } from '../../api';
+import { TIME_OUT_DURATION } from '../../helpers/constants';
 import { CityWeatherReport, Location } from '../../helpers/interfaces';
 import { ActionType } from '../action-types';
 import { CitiesAction, CityAction, SearchCityAction } from '../actions';
@@ -21,7 +22,7 @@ export const fetchTopCities = () => async (dispatch: Dispatch<CitiesAction>) => 
     handleFetchTopCitiesFail(dispatch);
     setTimeout(() => {
       handleDismissTopCitiesError(dispatch);
-    }, 4000);
+    }, TIME_OUT_DURATION);
   }
 };
 
@@ -53,15 +54,25 @@ export const fetchCity = (city: string) => async (dispatch: Dispatch<CityAction>
     handleFetchCitySuccess(dispatch, response.data);
   } catch (e) {
     handleFetchCityFail(dispatch);
+    setTimeout(() => {
+      handleDismissFetchCityError(dispatch);
+    }, TIME_OUT_DURATION);
   }
 };
 
 export const searchCity = (keyword: string) => async (dispatch: Dispatch<SearchCityAction>) => {
   handleSearchCity(dispatch);
   try {
-    const response: AxiosResponse<Location[]> = await fetchCityWeatherApi(keyword);
-    handleSearchCitySuccess(dispatch, response.data);
+    const response: AxiosResponse<any> = await searchCityApi(keyword);
+    const { results } = response.data;
+    if (results) {
+      const location: Location[] = results;
+      handleSearchCitySuccess(dispatch, location);
+    } else {
+      throw Error();
+    }
   } catch (e) {
+    console.log(e);
     handleSearchCityFail(dispatch);
   }
 };
@@ -87,6 +98,12 @@ const handleFetchTopCitiesSuccess = (dispatch: Dispatch<CitiesAction>, response:
 const handleDismissTopCitiesError = (dispatch: Dispatch<CitiesAction>) => {
   dispatch({
     type: ActionType.DISMISS_FETCH_TOP_CITIES_WEATHER_ERROR,
+  });
+};
+
+const handleDismissFetchCityError = (dispatch: Dispatch<CityAction>) => {
+  dispatch({
+    type: ActionType.DISMISS_FETCH_CITY_WEATHER_ERROR,
   });
 };
 

@@ -1,0 +1,23 @@
+.user-location {
+  text-align: right;
+}
+
+.user-location .button {
+  background-color: #47c652;
+  border: none;
+  font-family: 'Quicksand';
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.user-location .button:hover {
+  background-color: #35b640;
+}
+
+@media (max-width: 768px) {
+  .user-location .button {
+    width: 100%;
+  }
+}

@@ -14,4 +14,8 @@ interface FetchCitySuccessAction {
   payload: CityWeatherReport;
 }
 
-export type CityAction = FetchCityLoadingAction | FetchCitySuccessAction | FetchCityFailAction;
+interface DismissFetchCityError {
+  type: ActionType.DISMISS_FETCH_CITY_WEATHER_ERROR;
+}
+
+export type CityAction = FetchCityLoadingAction | FetchCitySuccessAction | FetchCityFailAction | DismissFetchCityError;

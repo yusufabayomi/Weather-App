@@ -21,7 +21,7 @@ const CityPage: FC = () => {
     <>
       {loading && <Notification text='loading ...' type='info' />}
       {error && <Notification text='Error fetching weather report' type='error' />}
-      <div className='pt50'>
+      <div className='pt30'>
         <div className='row'>
           <CityDetail />
           <CityNotes />
