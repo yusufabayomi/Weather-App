@@ -26,3 +26,11 @@ Show the weather reports of the top cities in the world. A city can be removed f
 A user can click on a city to view more weather report on the city. A user can also make notes on the city
 
 ![Alt text](https://i.im.ge/2021/09/24/TYGh9C.png 'Detail Screen')
+
+## Live Demo
+
+You can view the app hosted on [https://weatherbolt.netlify.app/](https://weatherbolt.netlify.app/ 'Demo Link')
+
+## Video Link
+
+You can view a video explaining how the app works on [https://player.vimeo.com/video/613736667?h=5f3496b0e0](https://player.vimeo.com/video/613736667?h=5f3496b0e0 'Video Link')
