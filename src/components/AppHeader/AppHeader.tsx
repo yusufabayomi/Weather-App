@@ -14,7 +14,7 @@ const AppHeader: FC = () => {
     <div className='row app-header'>
       <div className='col3' onClick={onClickHandler}>
         <h2 className='text-white logo'>
-          <FontAwesomeIcon icon={faSun} className='text-yellow' /> Weather App
+          <FontAwesomeIcon icon={faSun} className='text-yellow' /> WeatherBolt
         </h2>
       </div>
 
