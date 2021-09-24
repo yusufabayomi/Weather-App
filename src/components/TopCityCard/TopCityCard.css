@@ -4,3 +4,7 @@
   padding: 5px;
   margin-bottom: 10px;
 }
+
+.city-card-actions svg {
+  cursor: pointer;
+}
