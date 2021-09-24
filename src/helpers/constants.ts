@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.weatherstack.com';
+export const BASE_URL = 'https://api.weatherstack.com';
 
 export const TOKEN = '46f95323dfebd3959827ebf1cdcc4079';
 
